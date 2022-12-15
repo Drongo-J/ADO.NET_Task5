@@ -5,8 +5,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 
 namespace ECommerce.Domain.ViewModels
 {
@@ -48,6 +50,16 @@ namespace ECommerce.Domain.ViewModels
                 MessageBox.Show("Product was updated successfully!");
                 BackCommand.Execute(null);
             });
+        }
+
+        private static readonly Regex OnlyNumberRegex = new Regex("[0-9]+");
+        public void IsAllowedInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !IsTextAllowed(e.Text);
+        }
+        private static bool IsTextAllowed(string text)
+        {
+            return OnlyNumberRegex.IsMatch(text);
         }
     }
 }

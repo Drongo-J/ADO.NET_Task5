@@ -52,8 +52,8 @@ namespace ECommerce.Domain.ViewModels
         {
             FilterText = "Lower To Higher";
             SelectedProduct = new Product();
-            AllProducts = _productRepo.GetAllData();
             _productRepo = productRepo;
+            AllProducts = _productRepo.GetAllData();
             _productService = new ProductService();
 
             #region AddProduct
@@ -98,6 +98,65 @@ namespace ECommerce.Domain.ViewModels
             //});
             #endregion
 
+            #region AddOrder
+            var orderRepo = new OrderRepository();
+            //orderRepo.AddData(new Order()
+            //{
+            //    ProductId = 3,
+            //    Amount = 2,
+            //    CustomerId = 2,
+            //    Date = DateTime.Now.AddDays(-4),
+            //});
+
+            //orderRepo.AddData(new Order()
+            //{
+            //    ProductId = 6,
+            //    Amount = 4,
+            //    CustomerId = 1,
+            //    Date = DateTime.Now.AddDays(-6),
+            //});
+
+            //orderRepo.AddData(new Order()
+            //{
+            //    ProductId = 5,
+            //    Amount = 3,
+            //    CustomerId = 2,
+            //    Date = DateTime.Now.AddDays(-234),
+            //});
+
+            //orderRepo.AddData(new Order()
+            //{
+            //    ProductId = 3,
+            //    Amount = 1,
+            //    CustomerId = 1,
+            //    Date = DateTime.Now.AddDays(-42),
+            //});
+
+            //orderRepo.AddData(new Order()
+            //{
+            //    ProductId = 2,
+            //    Amount = 5,
+            //    CustomerId = 2,
+            //    Date = DateTime.Now.AddDays(-244),
+            //});
+
+            //orderRepo.AddData(new Order()
+            //{
+            //    ProductId = 8,
+            //    Amount = 1,
+            //    CustomerId = 2,
+            //    Date = DateTime.Now.AddDays(-45),
+            //});
+
+            //orderRepo.AddData(new Order()
+            //{
+            //    ProductId = 9,
+            //    Amount = 7,
+            //    CustomerId = 1,
+            //    Date = DateTime.Now.AddDays(-34),
+            //});
+            #endregion
+
             ToLowerCommand = new RelayCommand((o) =>
             {
                 if (!IsLower)
@@ -134,7 +193,11 @@ namespace ECommerce.Domain.ViewModels
 
             OrdersCommand = new RelayCommand((o) => 
             {
-
+                var ordersPage = new OrdersUC();
+                var ordersPageViewModel = new OrdersUCViewModel();
+                ordersPage.DataContext = ordersPageViewModel;
+                App.MyGrid.Children.RemoveAt(0);
+                App.MyGrid.Children.Add(ordersPage);
             });
         }
     }

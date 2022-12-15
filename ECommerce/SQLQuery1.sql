@@ -45,4 +45,4 @@ insert into Admins([Username],[Password])
 values('admin','admin')
 
 
-
+SELECT * FROM Products

@@ -18,6 +18,7 @@ namespace ECommerce.DataAccess.SqlServer
 
         public void AddData(Order data)
         {
+            var order = new Order();
             _dataContext.Orders.InsertOnSubmit(data);
             _dataContext.SubmitChanges();
         }

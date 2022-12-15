@@ -8,46 +8,68 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
         <Canvas Height="450">
+            <Button FontFamily="Cascadia Code SemiBold" 
+                    FontSize="25"
+                    Content="Back" 
+                    Canvas.Left="30"
+                    Background="Orange"
+                    Canvas.Top="26"
+                    Height="54"
+                    Width="175"
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top"
+                    Command="{Binding BackCommand}">
+            </Button>
+
+            <TextBlock FontFamily="Cascadia Code SemiBold" Padding="8" FontSize="42" Canvas.Left="356" Canvas.Top="20" HorizontalAlignment="Left" VerticalAlignment="Top" >Orders</TextBlock>
 
             <ListView 
                 Name="listView1"
-                ItemsSource="{Binding AllProducts}"
+                ItemsSource="{Binding AllOrders}"
                 Padding="10" 
-                SelectedItem="{Binding SelectedProduct,Mode=OneWayToSource}"
                 Background="White"
                 BorderBrush="Orange" 
-                BorderThickness="5" Height="340" Width="800" HorizontalAlignment="Center" VerticalAlignment="Top">
+                BorderThickness="5" Height="340" Width="800" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="5" Canvas.Top="110">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Name" Width="200">
+                        <GridViewColumn Header="Id" Width="50">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock FontFamily="Cascadia Code SemiLight" FontSize="18" HorizontalAlignment="Center" Padding="5,2" Text="{Binding Name}" ></TextBlock>
+                                    <TextBlock TextAlignment="Center" FontFamily="Cascadia Code SemiLight" FontSize="18" HorizontalAlignment="Center" Padding="5,2" Text="{Binding Order.Id}" ></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Price" Width="200">
+                        <GridViewColumn Header="Product Id" Width="150">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock FontFamily="Cascadia Code SemiLight" FontSize="18" HorizontalAlignment="Center" Padding="5,2" Text="{Binding Price}" ></TextBlock>
+                                    <TextBlock TextAlignment="Center" FontFamily="Cascadia Code SemiLight" FontSize="18" HorizontalAlignment="Center" Padding="5,2" Text="{Binding Order.ProductId}" ></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Discount" Width="200">
+                        <GridViewColumn Header="Amount" Width="130">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal" >
-                                        <TextBlock FontFamily="Cascadia Code SemiLight" FontSize="18" Text="{Binding Discount}" ></TextBlock>
-                                        <TextBlock FontFamily="Cascadia Code SemiLight" FontSize="18" Text="%" ></TextBlock>
+                                        <TextBlock TextAlignment="Center" FontFamily="Cascadia Code SemiLight" FontSize="18" Text="{Binding Order.Amount}" ></TextBlock>
                                     </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Quantity" Width="190">
+                        <GridViewColumn Header="Date" Width="240">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal" >
-                                        <TextBlock FontFamily="Cascadia Code SemiLight" FontSize="18" Text="{Binding Quantity}" ></TextBlock>
+                                        <TextBlock TextAlignment="Center" FontFamily="Cascadia Code SemiLight" FontSize="18" Text="{Binding Order.Date}" ></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Total" Width="190">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" >
+                                        <TextBlock TextAlignment="Center" FontFamily="Cascadia Code SemiLight" FontSize="18" Text="{Binding Total}" ></TextBlock>
+                                        <TextBlock FontFamily="Cascadia Code SemiBold" FontSize="18" Text="$" ></TextBlock>
                                     </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
@@ -56,35 +78,7 @@
                 </ListView.View>
             </ListView>
 
-            <Button FontFamily="Cascadia Code SemiBold" 
-                    FontSize="25" 
-                    Content="Add Product" 
-                    Canvas.Left="600"
-                    Canvas.Top="350"
-                    Height="55"
-                    Background="Orange"
-                    Width="175"
-                    Command="{Binding AddCommand}"
-                    HorizontalAlignment="Left" 
-                    VerticalAlignment="Top">
 
-
-            </Button>
-
-            <Button FontFamily="Cascadia Code SemiBold" 
-                    FontSize="25"
-                    Content="Back" 
-                    Canvas.Left="10"
-                    Background="Orange"
-                    Canvas.Top="348"
-                    Height="54"
-                    Width="175"
-                    HorizontalAlignment="Left" 
-                    VerticalAlignment="Center"
-                    Command="{Binding BackCommand}">
-
-
-            </Button>
 
         </Canvas>
     </Grid>

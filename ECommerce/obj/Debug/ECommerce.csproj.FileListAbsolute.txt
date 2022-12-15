@@ -29,3 +29,5 @@ C:\Users\Hafiz\source\repos\ECommerce3212LinqMVVM\ECommerce\obj\Debug\Domain\Vie
 C:\Users\Hafiz\source\repos\ECommerce3212LinqMVVM\ECommerce\obj\Debug\Domain\Views\AddProductUC.baml
 C:\Users\Hafiz\source\repos\ECommerce3212LinqMVVM\ECommerce\obj\Debug\Domain\Views\UpdateProductUC.g.cs
 C:\Users\Hafiz\source\repos\ECommerce3212LinqMVVM\ECommerce\obj\Debug\Domain\Views\UpdateProductUC.baml
+C:\Users\Hafiz\source\repos\ECommerce3212LinqMVVM\ECommerce\obj\Debug\Domain\Views\OrdersUC.g.cs
+C:\Users\Hafiz\source\repos\ECommerce3212LinqMVVM\ECommerce\obj\Debug\Domain\Views\OrdersUC.baml

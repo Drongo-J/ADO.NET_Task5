@@ -94,6 +94,7 @@
     <Compile Include="Domain\Abstractions\IOrderRepository.cs" />
     <Compile Include="Domain\Abstractions\IProductRepository.cs" />
     <Compile Include="Domain\Abstractions\IRepository.cs" />
+    <Compile Include="Domain\Models\OrderModel.cs" />
     <Compile Include="Domain\Services\CustomerService.cs" />
     <Compile Include="Domain\Services\ProductService.cs" />
     <Compile Include="Domain\ViewModels\AddProductUCViewModel.cs" />
@@ -101,7 +102,7 @@
     <Compile Include="Domain\ViewModels\BaseViewModel.cs" />
     <Compile Include="Domain\ViewModels\HomePageUCViewModel.cs" />
     <Compile Include="Domain\ViewModels\MainViewModel.cs" />
-    <Compile Include="Domain\ViewModels\OrderUCViewModel.cs" />
+    <Compile Include="Domain\ViewModels\OrdersUCViewModel.cs" />
     <Compile Include="Domain\ViewModels\ProductInfoViewModel.cs" />
     <Compile Include="Domain\ViewModels\UpdateProductUCViewModel.cs" />
     <Compile Include="Domain\Views\AddProductUC.xaml.cs">
@@ -179,7 +180,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Domain\AdditionalClasses\" />
-    <Folder Include="Domain\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Domain\Images\ecommerce.ico" />

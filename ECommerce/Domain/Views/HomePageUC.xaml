@@ -66,7 +66,10 @@
                         <GridViewColumn Header="Price" Width="200">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock FontFamily="Cascadia Code SemiBold" FontSize="18" HorizontalAlignment="Center" Padding="5,2" Text="{Binding Price}" ></TextBlock>
+                                    <StackPanel Orientation="Horizontal" >
+                                        <TextBlock TextAlignment="Center" FontFamily="Cascadia Code SemiLight" FontSize="18" Text="{Binding Price}" ></TextBlock>
+                                        <TextBlock FontFamily="Cascadia Code SemiLight" FontSize="18" Text="$" ></TextBlock>
+                                    </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
