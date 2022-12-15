@@ -1,0 +1,82 @@
+﻿<Window x:Class="ECommerce.Domain.Views.ProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ECommerce.Domain.Views"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Icon="\Domain\Images\ecommerce.ico"
+        Title="Order Product" Height="550" Width="900">
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Width="450" Margin="5">
+                <TextBlock FontFamily="Cascadia Code SemiBold" Padding="8" FontSize="22" >Name</TextBlock>
+                <TextBlock FontFamily="Cascadia Code SemiLight" Padding="8" FontSize="22" Text="{Binding ProductInfo.Name}" ></TextBlock>
+
+                <TextBlock FontFamily="Cascadia Code SemiBold" Padding="8" FontSize="22" >Price</TextBlock>
+                <TextBlock  FontFamily="Cascadia Code SemiLight" Padding="8" FontSize="22" Text="{Binding ProductInfo.Price}" ></TextBlock>
+
+                <TextBlock FontFamily="Cascadia Code SemiBold" Padding="8" FontSize="22" >Discount</TextBlock>
+                <TextBlock  FontFamily="Cascadia Code SemiLight" Padding="8" FontSize="22" Text="{Binding ProductInfo.Discount}" ></TextBlock>
+
+                <TextBlock FontFamily="Cascadia Code SemiBold" Padding="8" FontSize="22" >Quantity</TextBlock>
+                <TextBlock  FontFamily="Cascadia Code SemiLight" Padding="8" FontSize="22" Text="{Binding ProductInfo.Quantity}" ></TextBlock>
+
+                <TextBlock FontFamily="Cascadia Code SemiBold" Padding="8" FontSize="22" >Description</TextBlock>
+                <TextBlock  FontFamily="Cascadia Code SemiLight" Padding="8" FontSize="22" Text="{Binding ProductInfo.Description}" ></TextBlock>
+
+                
+            </StackPanel>
+            <StackPanel>
+                <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+
+                    <TextBlock VerticalAlignment="Top" 
+                           Height="40"
+                        FontSize="30"
+                               
+                           FontFamily="Cascadia Code SemiBold"
+                           Text="Amount"  Width="180"
+                           ></TextBlock>
+
+                    <TextBox VerticalAlignment="Top" 
+                         Height="40"
+                             FontSize="30"
+                             FontFamily="Cascadia Code SemiLight"
+                         Width="200" Margin="10,0,0,0"
+                         Text="{Binding Amount,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                         ></TextBox>
+                </StackPanel>
+                <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+
+                    <TextBlock 
+                           Height="66"
+                           FontSize="25"  Width="131"
+                           FontFamily="Cascadia Code SemiBold"
+                           Text="Customer Username" 
+                        TextWrapping="Wrap"
+                           />
+                    <TextBox 
+                         Height="40"
+                        FontSize="30"
+                        Margin="60,0,0,0"
+                         Width="200"
+                        FontFamily="Cascadia Code SemiLight"
+                         Text="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         />
+
+                
+                </StackPanel>
+                <StackPanel>
+                    <Button
+                    BorderBrush="Orange" BorderThickness="2"
+                    FontFamily="Cascadia Code SemiBold" Background="Transparent"
+                    Foreground="Orange" FontSize="25" FontWeight="ExtraBlack"
+                    Margin="0,30,0,0"
+                    Command="{Binding OrderCommand}">Order Now</Button>
+                </StackPanel>
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="ECommerce.Domain.Views.AddProductUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ECommerce.Domain.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="White">
+        <Canvas>
+            <Button FontFamily="Cascadia Code SemiBold" 
+                    FontSize="25"
+                    Content="Back" 
+                    Canvas.Left="15"
+                    Background="Orange"
+                    Canvas.Top="11"
+                    Height="54"
+                    Width="155"
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Top"
+                    Command="{Binding BackCommand}">
+            </Button>
+
+            <Image Source="\Domain\Images\ecommerce.ico" Canvas.Left="570" Height="76" Width="66" Canvas.Top="9"/>
+
+            <TextBlock FontFamily="Cascadia Code SemiBold" Padding="8" FontSize="42" Canvas.Left="253" Canvas.Top="10" HorizontalAlignment="Left" VerticalAlignment="Top" >Add Product</TextBlock>
+
+            <TextBlock FontFamily="Cascadia Code SemiBold" Padding="8" FontSize="22" Canvas.Left="27" Canvas.Top="118" HorizontalAlignment="Left" VerticalAlignment="Top" >Name</TextBlock>
+            <TextBox FontFamily="Cascadia Code SemiLight" Padding="8" FontSize="22" Text="{Binding ProductInfo.Name}" Canvas.Left="185" Canvas.Top="111" HorizontalAlignment="Left" VerticalAlignment="Top" Width="355" ></TextBox>
+
+            <TextBlock FontFamily="Cascadia Code SemiBold" Padding="8" FontSize="22" Canvas.Left="25" Canvas.Top="223" HorizontalAlignment="Left" VerticalAlignment="Top" >Price</TextBlock>
+            <TextBox FontFamily="Cascadia Code SemiLight" Padding="8" FontSize="22" Text="{Binding ProductInfo.Description}" Canvas.Left="185" Canvas.Top="165" HorizontalAlignment="Left" VerticalAlignment="Top" Width="355" ></TextBox>
+
+            <TextBlock FontFamily="Cascadia Code SemiBold" Padding="8" FontSize="22" Canvas.Left="20" Canvas.Top="273" HorizontalAlignment="Center" VerticalAlignment="Top" >Discount</TextBlock>
+            <TextBox FontFamily="Cascadia Code SemiLight" Padding="8" FontSize="22" Text="{Binding ProductInfo.Price}" Canvas.Left="185" Canvas.Top="216" HorizontalAlignment="Left" VerticalAlignment="Center" Width="355" ></TextBox>
+
+            <TextBlock FontFamily="Cascadia Code SemiBold" Padding="8" FontSize="22" Canvas.Left="20" Canvas.Top="318" HorizontalAlignment="Center" VerticalAlignment="Top" >Quantity</TextBlock>
+            <TextBox FontFamily="Cascadia Code SemiLight" Padding="8" FontSize="22" Text="{Binding ProductInfo.Discount}" Canvas.Left="185" Canvas.Top="266" HorizontalAlignment="Left" VerticalAlignment="Top" Width="355" ></TextBox>
+
+            <TextBlock FontFamily="Cascadia Code SemiBold" Padding="8" FontSize="22" Canvas.Left="20" Canvas.Top="168" HorizontalAlignment="Center" VerticalAlignment="Top" >Description</TextBlock>
+            <TextBox FontFamily="Cascadia Code SemiLight" Padding="8" FontSize="22" Text="{Binding ProductInfo.Quantity}" Canvas.Left="185" Canvas.Top="316" HorizontalAlignment="Left" VerticalAlignment="Top" Width="355" ></TextBox>
+
+
+            <Button FontFamily="Cascadia Code SemiBold" 
+                    FontSize="25"
+                    Content="Add" 
+                    Canvas.Left="585"
+                    Background="Orange"
+                    Canvas.Top="305"
+                    Height="54"
+                    Width="155"
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top"
+                    Command="{Binding AddCommand}">
+            </Button>
+        </Canvas>
+
+
+    </Grid>
+</UserControl>

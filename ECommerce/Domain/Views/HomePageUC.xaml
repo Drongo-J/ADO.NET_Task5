@@ -1,0 +1,97 @@
+﻿<UserControl x:Class="ECommerce.Domain.Views.HomePageUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ECommerce.Domain.Views" xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="White">
+        <StackPanel>
+            <Border BorderThickness="0,0,0,5" BorderBrush="Orange">
+                <StackPanel Width="800" Orientation="Horizontal" >
+                    <TextBlock  Foreground="Orange" Padding="10" HorizontalAlignment="Center" FontSize="30" FontFamily="Comic Sans MS" >E-Commerce App</TextBlock>
+                    <Button
+                        Command="{Binding ToLowerCommand}"
+                    Content="{Binding FilterText,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                    Background="Orange" 
+                    Padding="20" 
+                    FontFamily="Cascadia Code SemiBold"
+                    Foreground="White"
+                    FontWeight="ExtraBlack"
+                    BorderThickness="0"
+                    FontSize="25"></Button>
+                    <Button
+                    Margin="10,0,0,0"
+                    Content="Admin" 
+                    Background="Orange" 
+                    Padding="20" 
+                    Foreground="White"
+                    FontFamily="Cascadia Code SemiBold"
+                    FontWeight="ExtraBlack"
+                    BorderThickness="0"
+                    Command="{Binding AdminCommand}"
+                    FontSize="25"></Button>
+                    <Button
+                    Margin="10,0,0,0"
+                    Content="Orders" 
+                    Background="Orange" 
+                    Padding="20" 
+                    Foreground="White"
+                    FontSize="25"
+                    FontFamily="Cascadia Code SemiBold"
+                    FontWeight="ExtraBlack"
+                    BorderThickness="0"
+                    Command="{Binding OrdersCommand}"></Button>
+                </StackPanel>
+            </Border>
+
+            <ListView 
+                ItemsSource="{Binding AllProducts}" SelectedItem="{Binding SelectedProduct}"
+                Padding="10" Background="White" BorderBrush="Orange" BorderThickness="5,0,5,5">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding SelectProductCommand}" ></i:InvokeCommandAction>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Name" Width="200">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock FontFamily="Cascadia Code SemiBold" FontSize="18" HorizontalAlignment="Center" Padding="5,2" Text="{Binding Name}" ></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Price" Width="200">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock FontFamily="Cascadia Code SemiBold" FontSize="18" HorizontalAlignment="Center" Padding="5,2" Text="{Binding Price}" ></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Discount" Width="200">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" >
+                                        <TextBlock FontFamily="Cascadia Code SemiBold" FontSize="18" Text="{Binding Discount}" ></TextBlock>
+                                        <TextBlock FontFamily="Cascadia Code SemiBold" FontSize="18" Text="%" ></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Quantity" Width="190">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" >
+                                        <TextBlock FontSize="18" Text="{Binding Quantity}" ></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+    </Grid>
+</UserControl>
